@@ -6,15 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spell Space</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono:wght@400;700&family=Spectral+SC:wght@200;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.scss">
 </head>
 <body>
     <div id="header-background">
-        <p>Helmet Icon</p>
-        <p>Subtext</p>
+        <img id="logo" src="./img/Helmet.svg" />
+        <p id="logo-subtext">Spelling Exploration</p>
         <h1>Spell Space</h1>
+        <div id="space-image-container">
+            <img id="planet4" src="./img/Planet4.svg" width="50px"/>
+            <img id="rocket" src="./img/Rocket.svg" width="400px"/>
+            <img id="planet5" src="./img/Planet5.svg" width="140px"/>
+        </div>
 
+        <div id="header-btn-container">
+            <button id="start-btn" class="header-btn">Start Spelling</button>
+            
+            <div id="auth-btn-container">
+                <button id="signin-btn" class="header-btn auth-btn">Sign In</button>
+                <button id="signup-btn" class="header-btn auth-btn">Sign Up</button>
+            </div>
+        </div>
+
+        <div id="inspire-text">
+            <p class="op-50">Spell Anything.</p>
+            <p class="op-75">Learn Anything.</p>
+            <p class="op-50">Achieve Anything.</p>
+        </div>
     </div>
 
     <script src="./js/main.ts"></script>
