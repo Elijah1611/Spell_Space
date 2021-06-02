@@ -1,0 +1,25 @@
+{
+  "name": "Spell_Space",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html --log-level 4 --open",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LijahTheDev/Spell_Space.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LijahTheDev/Spell_Space/issues"
+  },
+  "homepage": "https://github.com/LijahTheDev/Spell_Space#readme",
+  "devDependencies": {
+    "sass": "^1.34.0",
+    "typescript": "^4.3.2"
+  }
+}
