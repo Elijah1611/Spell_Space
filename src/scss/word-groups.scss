@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: linear-gradient(to bottom, #434343, #333);
+  background-size: cover;
+  height: 100vh;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.title-outline {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.word-group-section {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.word-group-card {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  height: 70px;
+  margin-bottom: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-group-card h2 {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: 100;
+}
+
+.word-group-card span {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: 700;
+}

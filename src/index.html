@@ -7,25 +7,25 @@
     <title>Spell Space</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono:wght@400;700&family=Spectral+SC:wght@200;300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
 </head>
 <body>
     <div id="header-background">
         <img id="logo" src="./img/Helmet.svg" />
         <p id="logo-subtext">Spelling Exploration</p>
-        <h1>Spell Space</h1>
+        <h1 class="title text-3d">Spell<br>Space</h1>
         <div id="space-image-container">
-            <img id="planet4" src="./img/Planet4.svg" width="50px"/>
-            <img id="rocket" src="./img/Rocket.svg" width="400px"/>
-            <img id="planet5" src="./img/Planet5.svg" width="140px"/>
+            <img id="planet4" src="./img/Planet4.svg" width="60px" height="100px"/>
+            <img id="rocket" src="./img/Rocket.svg" width="400px" height="300px" style="padding: 1rem;"/>
+            <img id="planet5" src="./img/Planet 5.svg" width="140px" height="150px" style="padding: 2rem;"/>
         </div>
 
         <div id="header-btn-container">
-            <button id="start-btn" class="header-btn">Start Spelling</button>
-            
+            <a href="#" id="start-btn" class="header-btn">Start Spelling</a>
+
             <div id="auth-btn-container">
-                <button id="signin-btn" class="header-btn auth-btn">Sign In</button>
-                <button id="signup-btn" class="header-btn auth-btn">Sign Up</button>
+                <a href="signin.html" id="signin-btn" class="header-btn auth-btn">Sign In</a>
+                <a href="signup.html" id="signup-btn" class="header-btn auth-btn">Sign Up</a>
             </div>
         </div>
 
@@ -34,6 +34,17 @@
             <p class="op-75">Learn Anything.</p>
             <p class="op-50">Achieve Anything.</p>
         </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+        <a href="404.html">404 Page</a>
+        <a href="word-groups.html">Word Groups</a>
+        <a href="word-list.html">Word List</a>
+        <a href="pass.html">Pass Word</a>
+        <a href="fail.html">Failed Word</a>
+        <a href="testing.html">Testing</a>
+        <a href="details.html">Details</a>
+        <a href="menu.html">Menu</a>
     </div>
 
     <script src="./js/main.ts"></script>

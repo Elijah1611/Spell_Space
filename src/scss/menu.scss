@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #1b1b1b, rgb(20, 20, 20));
+    background-size: cover;
+    height: 100%;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .title-outline {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+
+  .star-rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.8rem;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .star-rating img {
+      margin-right: 5px;
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .profile-image {
+      border-radius: 5rem;
+  }
+
+  .profile-name {
+    font-family: "Space Mono", Roboto, monospace;
+    font-size: 2rem;
+    color: #fff;
+    margin: 2rem 0;
+  }
+
+
+
+  menu nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .nav-link {
+      display: block;
+      text-align: center;
+      font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 4rem 0;
+    padding: 2rem 0;
+  
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }

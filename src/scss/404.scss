@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  body {
+    background: url("../img/Stars.svg");
+    background-color: black;
+  }
+  
+#header-background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #434343, transparent);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
+#logo-subtext {
+    color: white;
+    font-family: "Spectral SC", "Roboto", monospace;
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+    opacity: 0.5;
+}
+
+.title-outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    margin-top: 2rem;
+
+    font-family: "Space Mono", Roboto, monospace;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 0.9;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.heading1 {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Roboto", monospace;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+  
+.subheading {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Roboto", monospace;
+}
+
+.button-group {
+    margin: 10rem;
+}
+
+.outline-btn {
+    font-family: "Roboto", monospace;
+    padding: 1rem 3rem;
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 30px;
+    margin: 0 1rem;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
