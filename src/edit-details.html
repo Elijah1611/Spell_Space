@@ -1,56 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Details | Spell Space</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Source+Code+Pro:wght@200;400;700&family=Space+Mono:ital,wght@0,700;1,400&family=Spectral+SC:wght@200;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./scss/details.scss">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html">
-                <img id="logo" src="./img/Helmet2.svg" width="124px" />
-            </a>
-            <a href="#"><img src="./img/Menu.svg" width="45px" class="menu-icon"/></a>
-        </nav>
-        <h1 class="title-outline">Edit Account Details</h1>
-    </header>
-    <main>
-       <section class="profile-header">
-           <h2 class="profile-name">Jane1611</h2>
-           <img src="https://i.pravatar.cc/150?img=5" class="profile-image" />
-       </section>
-       <section class="account-details">
-        <div>
-            <h3>Username</h3>
-            <input type="text" value="Jane1611" class="detail-input">
-        </div>
-        <div>
-            <h3>Email</h3>
-            <input type="email" value="jane1611@gmail.com" class="detail-input">
-        </div>
-        <div>
-            <h3>Password</h3>
-            <input type="password" value="password123" class="detail-input">
-        </div>
-        <div>
-            <h3>Location</h3>
-            <input type="text" value="Dallas, Texas US" class="detail-input">
-        </div>
-        <div>
-            <h3>Joined</h3>
-            <p>10/30/2019</p>
-        </div>
-       </section>
-       <section class="account-controls">
-           <a href="details.html" class="save-btn">Save</a>
-           <a href="#" class="remove-account-btn">Delete Account</a>
-       </section>
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Account Details | Spell Space</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Source+Code+Pro:wght@200;400;700&family=Space+Mono:ital,wght@0,700;1,400&family=Spectral+SC:wght@200;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./scss/details.scss" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">
+                    <img id="logo" src="./img/Helmet2.svg" width="124px" />
+                </a>
+                <section class="nav-items-section">
+                    <a href="index.html" class="nav-items">Home</a>
+                    <a href="word-groups.html" class="nav-items">Words</a>
+                    <a href="details.html" class="nav-items">Account</a>
+                </section>
+            </nav>
+            <h1 class="title-outline">Edit Account Details</h1>
+        </header>
+        <main>
+            <section class="profile-header">
+                <h2 class="profile-name">Loading...</h2>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                    class="profile-image"
+                    width="150"
+                    height="150"
+                    style="border-radius: '50%'"
+                />
+            </section>
+
+            <form id="edit-user-form">
+                    <section class="account-details">
+                    <div>
+                        <label for="fname-box">First Name</label>
+                        <input type="text" name="first_name" class="detail-input" id="fname-box" />
+                    </div>
+                    <div>
+                        <label for="lname-box">Last Name</label>
+                        <input type="text" name="last_name" class="detail-input" id="lname-box" />
+                    </div>
+                    <div>
+                        <label for="username-box">Username</label>
+                        <input type="text" name="username" class="detail-input" id="username-box" />
+                    </div>
+                    <div>
+                        <label for="email-box">Email</label>
+                        <input type="email" name="email" class="detail-input" id="email-box" />
+                    </div>
+                    <div>
+                        <label for="password-box">Password</label>
+                        <span class="hint">Confirm password or enter a new password</span>
+                        <input type="password" name="password" class="detail-input" id="password-box" />
+                    </div>
+                    <div>
+                        <label for="location-box">Location</label>
+                        <input type="text" name="location" class="detail-input" id="location-box" />
+                    </div>
+                    <div>
+                        <label for="profile-image-box">Profile Image URL</label>
+                        <input
+                            type="text"
+                            name="profile_image"
+                            class="detail-input"
+                            id="profile-image-box"
+                        />
+                    </div>
+                    <div>
+                        <label>Joined</label>
+                        <p id="joined-box"></p>
+                    </div>
+                </section>
+                <section class="account-controls">
+                    <button type="submit" class="save-btn" id="save-edit">Save</button>
+                    <button class="remove-account-btn" id="delete-account">Delete Account</button>
+                </section>
+                </form>
+            </section>
+        </main>
+
+        <script src="./js/edit-details.ts"></script>
+    </body>
 </html>

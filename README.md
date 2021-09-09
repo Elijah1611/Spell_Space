@@ -1,0 +1,1 @@
+Install parcel@1.12.3 globally to avoid errors.
