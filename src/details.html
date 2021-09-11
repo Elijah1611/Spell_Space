@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Account Details | Spell Space</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Source+Code+Pro:wght@200;400;700&family=Space+Mono:ital,wght@0,700;1,400&family=Spectral+SC:wght@200;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./scss/details.scss" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html">
-                    <img id="logo" src="./img/Helmet2.svg" width="124px" />
-                </a>
-                <section class="nav-items-section">
-                    <a href="index.html" class="nav-items">Home</a>
-                    <a href="word-groups.html" class="nav-items">Words</a>
-                    <a href="details.html" class="nav-items">Account</a>
-                </section>
-            </nav>
-            <h1 class="title-outline">Account Details</h1>
-        </header>
-        <main>
-            <section class="profile-header">
-                <h2 class="profile-name">Loading...</h2>
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
-                    class="profile-image"
-                    width="150"
-                    height="150"
-                    style="border-radius: '50%'"
-                />
-            </section>
-            <section class="account-details">
-                <div>
-                    <h3>First Name</h3>
-                    <p id="fname-box">Loading First Name...</p>
-                </div>
-                <div>
-                    <h3>Last Name</h3>
-                    <p id="lname-box">Loading Last Name...</p>
-                </div>
-                <div>
-                    <h3>Username</h3>
-                    <p id="username-box">Loading Username...</p>
-                </div>
-                <div>
-                    <h3>Email</h3>
-                    <p id="email-box">Loading Email...</p>
-                </div>
-                <div>
-                    <h3>Password</h3>
-                    <p id="password-box">. . . .</p>
-                </div>
-                <div>
-                    <h3>Location</h3>
-                    <p id="location-box">Loading Location...</p>
-                </div>
-                <div>
-                    <h3>Joined</h3>
-                    <p id="joined-box">Loading Date...</p>
-                </div>
-            </section>
-            <section class="account-controls">
-                <a href="edit-details.html" class="edit-btn">
-                    <button type="submit" class="edit-btn" id="edit">
-                        Edit
-                    </button>
-                </a>
-            </section>
 
-            <script src="./js/details.ts"></script>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Details | Spell Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Source+Code+Pro:wght@200;400;700&family=Space+Mono:ital,wght@0,700;1,400&family=Spectral+SC:wght@200;400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./scss/details.scss" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img id="logo" src="./img/Helmet2.svg" width="124px" />
+            </a>
+
+            <section class="nav-items-section">
+                <a href="index.html" class="nav-items">Home</a>
+                <a href="word-groups.html" class="nav-items">Words</a>
+                <a href="details.html" class="nav-items">Account</a>
+                <a href="menu.html">
+                    <div class="star-rating">
+                        <img src="./img/star.svg" width="30px" />
+                        <h3>0</h3>
+                    </div>
+                </a>
+            </section>
+        </nav>
+        <h1 class="title-outline">Account Details</h1>
+    </header>
+    <main>
+        <section class="profile-header">
+            <h2 class="profile-name">Loading...</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                class="profile-image" width="150" height="150" style="border-radius: '50%'" />
+        </section>
+        <section class="account-details">
+            <div>
+                <h3>First Name</h3>
+                <p id="fname-box">Loading First Name...</p>
+            </div>
+            <div>
+                <h3>Last Name</h3>
+                <p id="lname-box">Loading Last Name...</p>
+            </div>
+            <div>
+                <h3>Username</h3>
+                <p id="username-box">Loading Username...</p>
+            </div>
+            <div>
+                <h3>Email</h3>
+                <p id="email-box">Loading Email...</p>
+            </div>
+            <div>
+                <h3>Password</h3>
+                <p id="password-box">. . . .</p>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p id="location-box">Loading Location...</p>
+            </div>
+            <div>
+                <h3>Total Quiz Time</h3>
+                <p id="quiz-time">Loading Data...</p>
+            </div>
+            <div>
+                <h3>Joined</h3>
+                <p id="joined-box">Loading Date...</p>
+            </div>
+        </section>
+        <section class="account-controls">
+            <a href="edit-details.html" class="edit-btn">
+                <button type="submit" class="edit-btn" id="edit">
+                    Edit
+                </button>
+            </a>
+        </section>
+
+        <script src="./js/details.ts"></script>
+    </main>
+</body>
+
 </html>

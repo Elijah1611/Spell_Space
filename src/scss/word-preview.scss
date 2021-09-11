@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #434343, #333);
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nav-items-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-items {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.title-outline {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.info-heading {
+    font-family: "Space Mono", Roboto, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 200;
+    margin: 1rem 0;
+}
+
+.info-body {
+    font-family: Roboto, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+.info-section {
+    margin-bottom: 3rem;
+}
+
+.quiz-stats {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+}
+
+.quiz-stats p {
+    font-weight: lighter;
+}
+
+.quiz-stats span {
+    font-weight: 700;
+}
+
+hr {
+    width: 50%;
+    opacity: 0.5;
+    margin: 2.5rem auto;
+}
+
+.test-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.quiz-btn {
+    width: 200px;
+    height: 50px;
+    border: 2px solid lightgreen;
+    color: lightgreen;
+    border-radius: 5rem;
+    background: transparent;
+}

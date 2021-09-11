@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
 }
@@ -40,6 +44,7 @@ nav {
 
 .nav-items-section {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -156,7 +161,6 @@ nav {
 
 a .edit-btn {
     border: none;
-    cursor: pointer;
 }
 
 .save-btn {
@@ -166,7 +170,6 @@ a .edit-btn {
     color: lightgreen;
     border-radius: 5rem;
     background: transparent;
-    cursor: pointer;
 }
 
 .remove-account-btn {
@@ -176,7 +179,6 @@ a .edit-btn {
     border: 2px solid red;
     border-radius: 5rem;
     background: transparent;
-    cursor: pointer;
 }
 
 .hint {
@@ -184,4 +186,25 @@ a .edit-btn {
     font-style: italic;
     font-size: 0.7rem;
     margin-bottom: 1rem;
+}
+#logo {
+    margin-left: 0.5rem;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.star-rating img {
+    margin-right: 2px;
+}
+
+.star-rating h3 {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: lighter;
 }

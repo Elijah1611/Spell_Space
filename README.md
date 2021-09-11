@@ -1,1 +1,1 @@
-Install parcel@1.12.3 globally to avoid errors.
+For ```Invalid Version: undefined``` error, install parcel@1.12.3 globally to avoid errors.

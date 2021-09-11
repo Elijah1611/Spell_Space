@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Spell Space</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono:wght@400;700&family=Spectral+SC:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono:wght@400;700&family=Spectral+SC:wght@200;300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./scss/signup.scss">
 </head>
+
 <body>
     <div id="header-background">
         <a href="/">
@@ -27,15 +31,15 @@
             <input type="text" id="lastName" name="lastName" class="auth-field">
 
             <label for="email" class="auth-label">Email</label>
-            <input type="text" id="email" name="email" class="auth-field">
+            <input type="email" id="email" name="email" class="auth-field">
 
             <label for="email" class="auth-label">Password</label>
-            <input type="text" id="password" name="password" class="auth-field">
+            <input type="password" id="password" name="password" class="auth-field">
 
             <label for="confirmPassword" class="auth-label">Confirm Password</label>
-            <input type="text" id="confirmPassword" name="confirmPassword" class="auth-field">
+            <input type="password" id="confirmPassword" name="confirmPassword" class="auth-field">
         </div>
-        
+
 
         <div id="header-btn-container">
             <div id="auth-btn-container">
@@ -48,4 +52,5 @@
 
     <script src="./js/main.ts"></script>
 </body>
+
 </html>
