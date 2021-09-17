@@ -1,5 +1,4 @@
-import {User} from './user'
-
+import { User } from './user'
 import axios from "axios";
 
 class EditUserForm {
@@ -25,8 +24,9 @@ class EditUserForm {
             }
         } catch (e) {
             console.log(e)
+            document.querySelector('.hint').classList.add('hint-error')
         }
-    }   
+    }
 
     public static activateForm(): void {
         if (localStorage.getItem('token') && localStorage.getItem('userId')) {
@@ -44,7 +44,8 @@ const main = () => {
     } else {
         window.location.href = "/signin.html";
     }
+
+    EditUserForm.activateForm();
 }
 
-EditUserForm.activateForm();
 main()

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word List | Spell Space</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono:wght@400;700&family=Source+Code+Pro:wght@200;400;700&family=Spectral+SC:wght@200;300;400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./scss/word-preview.scss" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img id="logo" src="./img/Helmet2.svg" width="124px" />
+            </a>
+            <section class="nav-items-section">
+                <a href="index.html" class="nav-items">Home</a>
+                <a href="word-groups.html" class="nav-items">Words</a>
+                <a href="menu.html">
+                    <div class="star-rating">
+                        <img src="./img/star.svg" width="30px" />
+                        <h3>0</h3>
+                    </div>
+                </a>
+            </section>
+        </nav>
+        <h1 class="title-outline">Apple</h1>
+    </header>
+
+    <main>
+        <section class="word-preview-section">
+            <div class="quiz-stats">
+                <div id="starLevel">
+                    <img src="./img/OneStar.svg" width="148" alt="Star Level">
+                </div>
+                <div>
+                    <p id="quizCount">Quiz Count: <span>0</span></p>
+                    <p id="lastTested">Last Tested: <span>Never Tested</span></p>
+                    <p id="lastQuizTime">Latest Quiz Time: <span>0 seconds</span></p>
+                    <p id="totalQuizTime">Total Quiz Time: <span>0 seconds</span></p>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="info-section">
+                <h2 class="info-heading">Definition</h2>
+                <p class="info-body" id="def">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="info-section">
+                <h2 class="info-heading">Pronunciation</h2>
+                <p class="info-body" style="margin-bottom: 2rem;" id="wordAudio">
+                    <img src="./img/sound.svg" width="64" alt="Sound Icon">
+                </p>
+                <p id="wordAudioError" class="hide">Error Loading Audio</p>
+            </div>
+            <div class="info-section">
+                <h2 class="info-heading">Word Group</h2>
+                <p class="info-body" id="wordGroup">A Words</p>
+            </div>
+        </section>
+        <section class="test-controls">
+            <a href="/testing.html">
+                <button class="quiz-btn" id="quiz-btn">Spell Word</button>
+            </a>
+        </section>
+    </main>
+
+    <script src="./js/word-test.ts"></script>
+</body>
+
+</html>

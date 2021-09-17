@@ -67,6 +67,7 @@ nav {
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
+    margin-bottom: 1.5rem;
 }
 
 .info-heading {
@@ -79,6 +80,7 @@ nav {
     color: #fff;
     font-weight: 200;
     margin: 1rem 0;
+    letter-spacing: 0.1rem;
 }
 
 .info-body {
@@ -92,6 +94,13 @@ nav {
     font-weight: 200;
     letter-spacing: 0.1rem;
     text-align: center;
+}
+
+.info-body#def {
+    text-align: center;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .info-section {
@@ -116,8 +125,12 @@ nav {
     font-weight: lighter;
 }
 
-.quiz-stats span {
+.quiz-stats {
     font-weight: 700;
+}
+
+.quiz-stats span {
+    font-weight: lighter;
 }
 
 hr {
@@ -140,4 +153,39 @@ hr {
     color: lightgreen;
     border-radius: 5rem;
     background: transparent;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.star-rating img {
+    margin-right: 2px;
+}
+
+.star-rating h3 {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: lighter;
+}
+
+#wordAudio img {
+    cursor: pointer;
+}
+
+#wordAudioError {
+    color: red;
+    text-align: center;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }

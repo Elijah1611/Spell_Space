@@ -1,5 +1,6 @@
 import axios from "axios";
 import humanize from "humanize-duration";
+import { docQuery, docQueryAll } from './helpers'
 
 export class User {
     public static firstName: string;
@@ -9,8 +10,8 @@ export class User {
     public static location: string;
     public static profileImage: string;
     public static joinDate: Date;
-    public static totalStars: number;
-    public static totalTime: number;
+    public static totalStars: number = 0;
+    public static totalTime: number = 0;
 
     private static async fetchAndLoadUser() {
         try {
@@ -36,7 +37,6 @@ export class User {
     }
 
     private static async fetchUserTotals() {
-        http://localhost:5000/api/quiz/user/1/total
         try {
             const response = await (await axios.get(`http://localhost:5000/api/quiz/user/${localStorage.getItem('userId')}/totals`, {
                 headers: {
@@ -58,15 +58,15 @@ export class User {
     }
 
     private static updateUserHeader() {
-        const profileName = document.querySelector('.profile-header .profile-name')
-        const profileImage = document.querySelector('.profile-header .profile-image')
+        const profileName = docQuery('.profile-header .profile-name')
+        const profileImage = docQuery('.profile-header .profile-image')
 
         profileName.innerHTML = this.username
         profileImage.setAttribute('src', this.profileImage)
     }
 
     private static updateUserStars() {
-        const starElement = document.querySelector('.star-rating h3')
+        const starElement = docQuery('.star-rating h3')
 
         starElement.innerHTML = this.totalStars.toString()
     }
@@ -74,7 +74,7 @@ export class User {
     private static updateUserDetails() {
         this.updateUserStars()
 
-        const accountDetailFields = document.querySelectorAll('.account-details div p')
+        const accountDetailFields = docQueryAll('.account-details div p')
 
         const firstNameField = accountDetailFields[0]
         const lastNameField = accountDetailFields[1]
@@ -94,6 +94,8 @@ export class User {
     }
 
     private static updateEditUserDetails() {
+        this.updateUserStars()
+
         const getField = (query): any => document.getElementById(`${query}`)
         let firstNameField = getField('fname-box')
         let lastNameField = getField('lname-box')
@@ -114,6 +116,14 @@ export class User {
         joinDateField.innerHTML = new Date(this.joinDate).toDateString()
     }
 
+    private static updateMenuDetails() {
+        const usernameElement = docQuery('.profile-name');
+        const profileImgElement = docQuery('.profile-image');
+
+        usernameElement.innerHTML = this.username
+        profileImgElement.setAttribute('src', this.profileImage)
+    }
+
     public static async loadDetailsPage() {
         await this.fetchAndLoadUser()
         await this.fetchUserTotals()
@@ -123,7 +133,18 @@ export class User {
 
     public static async loadEditDetailsPage() {
         await this.fetchAndLoadUser()
+        await this.fetchUserTotals()
         this.updateUserHeader()
         this.updateEditUserDetails()
+    }
+
+    public static async loadUserStars() {
+        await this.fetchUserTotals()
+        this.updateUserStars()
+    }
+
+    public static async loadMenuPage() {
+        await this.fetchAndLoadUser()
+        this.updateMenuDetails()
     }
 }

@@ -15,7 +15,8 @@ ul {
 body {
   background: linear-gradient(to bottom, #1b1b1b, rgb(20, 20, 20));
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 header nav {

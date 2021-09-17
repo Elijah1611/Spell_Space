@@ -1,4 +1,5 @@
 import axios from "axios";
+import { User } from "./user";
 
 class WordGroups {
     public static async getGroups() {
@@ -9,6 +10,8 @@ class WordGroups {
             const groupSection = document.querySelector('.word-group-section')
 
             groupSection.innerHTML = this.buildWordGroupElement(groups)
+
+            User.loadUserStars()
         } catch (err) {
             console.log(err)
         }
