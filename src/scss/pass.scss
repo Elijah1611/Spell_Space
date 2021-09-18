@@ -1,86 +1,123 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  body {
-    background: linear-gradient(to bottom, #434343, #333);
-    background-size: cover;
-  }
-  
-  header nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 2rem;
-  }
-  
-  header h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-  }
-  
-  .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    
-    font-family: "Source Code Pro", Roboto, monospace;
-    font-weight: 700;
-    font-size: 6rem;
-    line-height: 0.9;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: linear-gradient(to bottom, #434343, #333);
+  background-size: cover;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-items-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-items {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.star-rating img {
+  margin-right: 2px;
+}
+
+.star-rating h3 {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: lighter;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 0.9;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .pass-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
 }
 
 .pass-check {
-    max-width: 700px;
+  max-width: 300px;
 }
 
 .word-list-section {
-    max-width: 500px;
-    margin: 2rem auto;
-  }
-  
-.word-list-card {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto;
+}
 
-    height: 70px;
-    margin-bottom: 2rem;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.word-list-card {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  height: 70px;
+  margin-bottom: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .word-list-card h2 {
-    font-family: "Source Code Pro", Roboto, monospace;
-    font-weight: 700;
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: 700;
 }
-  

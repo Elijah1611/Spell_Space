@@ -32,6 +32,44 @@ header h1 {
   margin-bottom: 4rem;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-items-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-items {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.star-rating img {
+  margin-right: 2px;
+}
+
+.star-rating h3 {
+  font-family: "Source Code Pro", Roboto, monospace;
+  font-weight: lighter;
+}
+
 .title-outline {
   font-family: "Source Code Pro", Roboto, monospace;
   font-weight: 700;
@@ -63,11 +101,13 @@ header h1 {
   margin-top: 1rem;
 }
 
-.word-audio {
+#wordAudio {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5rem 0;
+  cursor: pointer;
 }
 
 .word-spelling {
@@ -93,36 +133,43 @@ header h1 {
 }
 
 .letter-count {
-    font-family: "Source Code Pro", "Roboto", sans-serif;
-    font-weight: 200;
-    color: #fff;
-    margin-top: 1rem;
+  font-family: "Source Code Pro", "Roboto", sans-serif;
+  font-weight: 200;
+  color: #fff;
+  margin-top: 1rem;
 }
 
 .wrong-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0;
 }
 
 .close-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
 }
 
-
 .close-section p {
-    font-family: "Source Code Pro", "Roboto", sans-serif;
-    font-weight: 200;
+  font-family: "Source Code Pro", "Roboto", sans-serif;
+  font-weight: 200;
 }
 
 .close-btn {
-    border-radius: 5rem;
-    border: 0;
-    background-color: rgba(0,0,0,.06);
-    margin-bottom: 1rem;
+  border-radius: 5rem;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

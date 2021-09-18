@@ -15,32 +15,43 @@
             <a href="index.html">
                 <img id="logo" src="./img/Helmet2.svg" width="124px" />
             </a>
-            <a href="#"><img src="./img/Menu.svg" width="45px" class="menu-icon"/></a>
+            <section class="nav-items-section">
+                <a href="index.html" class="nav-items">Home</a>
+                <a href="word-groups.html" class="nav-items">Words</a>
+                <a href="menu.html">
+                    <div class="star-rating">
+                        <img src="./img/star.svg" width="30px" />
+                        <h3>0</h3>
+                    </div>
+                </a>
+            </section>
         </nav>
         <div class="fail-section">
-            <img src="./img/ZeroStars.svg" class="stars" width="300px"/>
+            <img src="./img/ZeroStars.svg" class="stars" width="200px"/>
             <h1 class="title">Failed</h1>
-            <img src="./img/Failed.svg" class="fail-icon" width="500px" />
+            <img src="./img/Failed.svg" class="fail-icon" width="300px" />
         </div>
     </header>
     <main>
         <section class="word-list-section">
-            <a href="index.html">
+            <a href="index.html" id="restart">
                 <div class="word-list-card">
                     <h2>Again</h2>
                 </div>
             </a>
-            <a href="index.html">
+            <a href="index.html" id="words">
                 <div class="word-list-card">
                     <h2>A Words</h2>
                 </div>
             </a>
-            <a href="index.html">
+            <a href="word-groups.html" id="groups">
                 <div class="word-list-card">
                     <h2>Word Groups</h2>
                 </div>
             </a>
         </section>
     </main>
+
+    <script src="./js/fails.ts"></script>
 </body>
 </html>

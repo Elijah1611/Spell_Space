@@ -19,28 +19,38 @@
                 <a href="index.html">
                     <img id="logo" src="./img/Helmet2.svg" width="124px" />
                 </a>
-                <a href="#"
-                    ><img src="./img/Menu.svg" width="45px" class="menu-icon"
-                /></a>
+                <section class="nav-items-section">
+                    <a href="index.html" class="nav-items">Home</a>
+                    <a href="word-groups.html" class="nav-items">Words</a>
+                    <a href="menu.html">
+                        <div class="star-rating">
+                            <img src="./img/star.svg" width="30px" />
+                            <h3>0</h3>
+                        </div>
+                    </a>
+                </section>
             </nav>
             <h1 class="title-outline">Testing</h1>
         </header>
         <main>
             <section class="timer-section">
                 <h2 class="timer-title" style="font-weight: 200">Time Left</h2>
-                <h3 class="timer">0:09</h3>
+                <h3 class="timer">GO!</h3>
             </section>
-            <section class="word-audio">
+            <section id="wordAudio">
                 <img src="./img/sound.svg" width="100px" />
+                <p id="wordAudioError" class="hide">Error Loading Audio</p>
             </section>
             <section class="word-spelling">
-                <input type="text" class="spelling-input" />
-                <p class="letter-count">Letter Count 5/7</p>
+                <form id="spelling-input-form">
+                    <input type="text" class="spelling-input" />
+                </form>
+                <p class="letter-count">Letter Count 0</p>
             </section>
             <section class="wrong-section">
-                <img src="./img/Failed.svg" class="fail-icon" width="50px" />
-                <img src="./img/emptyX.svg" class="fail-icon" width="50px" />
-                <img src="./img/emptyX.svg" class="fail-icon" width="50px" />
+                <img src="./img/emptyX.svg" id="fail-icon-1" width="50px" />
+                <img src="./img/emptyX.svg" id="fail-icon-2" width="50px" />
+                <img src="./img/emptyX.svg" id="fail-icon-3" width="50px" />
             </section>
 
             <section class="close-section">
@@ -54,5 +64,7 @@
                 <p>Exit</p>
             </section>
         </main>
+
+        <script src="./js/word-test.ts"></script>
     </body>
 </html>
