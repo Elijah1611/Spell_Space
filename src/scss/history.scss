@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #434343, #333);
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-items-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-items {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.title-outline {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.quiz-list-section {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.quiz-block {
+    width: 250px;
+}
+
+.quiz-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    height: 100%;
+    margin-bottom: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-transform: capitalize;
+    font-family: Roboto, sans-serif;
+}
+
+.word-group-card h2 {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 100;
+}
+
+.word-group-card span {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.no-content-text {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.star-rating img {
+    margin-right: 2px;
+}
+
+.star-rating h3 {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: lighter;
+}
