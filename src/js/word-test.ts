@@ -35,6 +35,7 @@ export class WordTest {
     private static spellingInputElement = docQuery('.spelling-input')
     private static letterCountElement = docQuery('.letter-count')
     private static quizFails = 0
+    private static timerState = 15
 
     private static async fetchWordDetails() {
         try {
@@ -129,49 +130,8 @@ export class WordTest {
         })
     }
 
-    private static startQuizTimer() {
-        let seconds = 15
-        const timerElement = docQuery('.timer')
-
-        const timer = () => {
-            if (seconds < 0) {
-                clearInterval(intervalId)
-                timerElement.innerHTML = 'Out of Time!'
-                window.location.href = `/fail.html?id=${this.wordId}`
-                return
-            }
-
-            timerElement.innerHTML = seconds.toString()
-            seconds-- 
-        }
-
-        const intervalId = setInterval(timer, 1000)
-    }
-
-    public static async loadWordPreviewPage() {
-        await this.fetchWordDetails()
-        await this.fetchQuizDetails()
-
-        this.wordTitleElement.innerHTML = this.word;
-        this.wordDefinitionElement.innerHTML = this.definition
-        this.starLevelElement.innerHTML = this.makeStarRatingImageElement()
-
-        await this.handleWordAudio()
-
-        if (!this.latestQuiz) return
-
-        this.quizCountElement.innerHTML = this.quizList.length
-        this.lastTestedDateElement.innerHTML = new Date(this.latestQuiz.created_at).toDateString()
-        this.lastQuizTimeElement.innerHTML = humanize(this.latestQuiz.elapsed_time, { round: true });
-        this.totalQuizTimeElement.innerHTML = humanize(this.totalQuizTime, { round: true });
-
-        this.testButtonElement.addEventListener('click', () => {
-            this.testButtonElement.setAttribute('href', `./testing.html?id=${this.wordId}`) 
-        })
-    }
-
     private static checkSpellingInput() {
-        this.spellingFormElement.addEventListener('submit', (e) => {
+        this.spellingFormElement.addEventListener('submit', async (e) => {
             e.preventDefault()
 
             const spelledWord: string = e.target[0].value
@@ -179,6 +139,16 @@ export class WordTest {
             console.log(spelledWord)
 
             if (spelledWord.toUpperCase() === this.word.toUpperCase()) {
+                const userId = localStorage.getItem('userId')
+
+                const results = await axios.post(`http://localhost:5000/api/quiz/`, {
+                    star_level: 3 - this.quizFails,
+                    elapsed_time: this.timerState * 1000,
+                    user_id: userId,
+                    word_id: this.wordId
+                })
+
+                console.log(results.data)
                 window.location.href = `/pass.html?id=${this.wordId}&fails=${this.quizFails}`
             } 
             else {
@@ -211,6 +181,50 @@ export class WordTest {
 
         failList[(this.quizFails-1 || 0)].setAttribute('src', failImg)
     }
+
+    private static startQuizTimer() {
+        let seconds = 15
+        const timerElement = docQuery('.timer')
+
+        const timer = () => {
+            if (seconds < 0) {
+                clearInterval(intervalId)
+                timerElement.innerHTML = 'Out of Time!'
+                window.location.href = `/fail.html?id=${this.wordId}`
+                return
+            }
+
+            timerElement.innerHTML = seconds.toString()
+            this.timerState = seconds
+            seconds-- 
+        }
+
+        const intervalId = setInterval(timer, 1000)
+    }
+
+    public static async loadWordPreviewPage() {
+        await this.fetchWordDetails()
+        await this.fetchQuizDetails()
+
+        this.wordTitleElement.innerHTML = this.word;
+        this.wordDefinitionElement.innerHTML = this.definition
+        this.starLevelElement.innerHTML = this.makeStarRatingImageElement()
+
+        await this.handleWordAudio()
+
+        if (!this.latestQuiz) return
+
+        this.quizCountElement.innerHTML = this.quizList.length
+        this.lastTestedDateElement.innerHTML = new Date(this.latestQuiz.created_at).toDateString()
+        this.lastQuizTimeElement.innerHTML = humanize(this.latestQuiz.elapsed_time, { round: true });
+        this.totalQuizTimeElement.innerHTML = humanize(this.totalQuizTime, { round: true });
+
+        this.testButtonElement.addEventListener('click', () => {
+            this.testButtonElement.setAttribute('href', `./testing.html?id=${this.wordId}`) 
+        })
+    }
+
+    
 
     public static async loadWordQuizPage() {
         await this.fetchWordDetails()

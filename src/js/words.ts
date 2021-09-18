@@ -23,42 +23,43 @@ class Words {
             title.innerHTML = `${group.name}`
             wordSection.innerHTML = this.buildWordListElement(words, quizzes)
 
-            User.loadUserStars()
-
+            
             docQuery('#word-add a').setAttribute('href', `word-add.html?id=${this.wordGroupId}`)
             docQuery('#word-remove a').setAttribute('href', `word-remove.html?id=${this.wordGroupId}`)
+            docQuery('#group-edit a').setAttribute('href', `group-edit.html?id=${this.wordGroupId}`)
             docQuery('#group-remove a').setAttribute('href', `group-remove.html?id=${this.wordGroupId}`)
         } catch (err) {
             console.log(err)
         }
     }
-
+    
     private static getStarLevelImage(quizzes, wordId) {
         const quizRatingForWord = quizzes.filter(q => q.word.id === wordId)[0]?.star_level || 0
         return starRatingImageUrls[quizRatingForWord]
     }
-
+    
     private static buildWordListElement(words, quizzes) {
-
+        
         if (words.length === 0) {
             return "<h1 style='text-align: center; color: #fff;'>No Words Here.</h1>"
         }
-
+        
         return words.map(w => (
             `<a href="word-preview.html?id=${w.id}">
-                <img src="${this.getStarLevelImage(quizzes, w.id)}" class="stars" width="50px" />
-                <div class="word-list-card">
-                    <h2>${w.text}</h2>
-                </div>
+            <img src="${this.getStarLevelImage(quizzes, w.id)}" class="stars" width="50px" />
+            <div class="word-list-card">
+            <h2>${w.text}</h2>
+            </div>
             </a>`
-        )).join('')
+            )).join('')
+        }
     }
-}
-
-
-const main = () => {
-    if (localStorage.getItem('token')) {
-        Words.getWords()
+    
+    
+    const main = () => {
+        if (localStorage.getItem('token')) {
+            Words.getWords()
+            User.loadUserStars()
     } else {
         window.location.href = "/signin.html";
     }
