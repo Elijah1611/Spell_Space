@@ -65,6 +65,22 @@ nav {
     -webkit-text-stroke-color: white;
 }
 
+.action-icon {
+    text-align: center;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-icon {
+    color: #fff;
+}
+
+.remove-icon {
+    color: red;
+}
+
 .word-group-section {
     width: 90%;
     max-width: 500px;

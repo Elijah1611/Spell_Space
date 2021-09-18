@@ -52,62 +52,6 @@ nav {
     color: #fff;
 }
 
-.title-outline {
-    font-family: "Source Code Pro", Roboto, monospace;
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
-}
-
-.action-icon {
-    text-align: center;
-    margin: 4rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: #fff;
-
-    width: 100px;
-}
-
-#action-btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-.word-list-section {
-    width: 90%;
-    max-width: 500px;
-    margin: 2rem auto;
-}
-
-.word-list-card {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-
-    height: 70px;
-    margin-bottom: 2rem;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.word-list-card h2 {
-    font-family: "Source Code Pro", Roboto, monospace;
-    font-weight: 700;
-    text-transform: capitalize;
-}
-
 .star-rating {
     display: flex;
     justify-content: center;
@@ -126,8 +70,72 @@ nav {
     font-weight: lighter;
 }
 
-.directions {
+.title-outline {
+    font-family: "Source Code Pro", Roboto, monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
     color: #fff;
+    text-transform: uppercase;
     text-align: center;
-    font-family: "Roboto", sans-serif;
+
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.remove-btn {
+    width: 200px;
+    height: 50px;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 5rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+main div label {
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+main div {
+    font-family: "Space Mono", Roboto, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 200;
+    margin: 1rem 0;
+}
+
+main div p {
+    font-size: 1rem;
+    margin: 2rem 0;
+    font-family: Roboto, monospace;
+}
+
+main div input {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+    outline: none;
+    font-size: 1.3rem;
+    width: 300px;
+    height: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
 }

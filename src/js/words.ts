@@ -1,6 +1,6 @@
 import axios from "axios";
 import { User } from "./user";
-import { starRatingImageUrls } from './helpers'
+import { docQuery, starRatingImageUrls } from './helpers'
 
 class Words {
     public static wordGroupId: number = parseInt(window.location.search.replace('?id=', ''))
@@ -24,6 +24,10 @@ class Words {
             wordSection.innerHTML = this.buildWordListElement(words, quizzes)
 
             User.loadUserStars()
+
+            docQuery('#word-add a').setAttribute('href', `word-add.html?id=${this.wordGroupId}`)
+            docQuery('#word-remove a').setAttribute('href', `word-remove.html?id=${this.wordGroupId}`)
+            docQuery('#group-remove a').setAttribute('href', `group-remove.html?id=${this.wordGroupId}`)
         } catch (err) {
             console.log(err)
         }
