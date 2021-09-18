@@ -55,4 +55,13 @@ class Words {
     }
 }
 
-Words.getWords()
+
+const main = () => {
+    if (localStorage.getItem('token')) {
+        Words.getWords()
+    } else {
+        window.location.href = "/signin.html";
+    }
+}
+
+main()

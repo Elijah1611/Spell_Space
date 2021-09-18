@@ -58,4 +58,12 @@ class WordRemove {
     }
 }
 
-WordRemove.getWords()
+const main = () => {
+    if (localStorage.getItem('token')) {
+        WordRemove.getWords()
+    } else {
+        window.location.href = "/signin.html";
+    }
+}
+
+main()

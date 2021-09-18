@@ -11,8 +11,6 @@ class GroupRemove {
             const group = groupResult.data
             let markedForRemovalId = null
 
-            User.loadUserStars()
-
             const title = document.querySelector('.title-outline')
             title.innerHTML = `${group.name}`
             
@@ -29,4 +27,13 @@ class GroupRemove {
     }
 }
 
-GroupRemove.removeGroup()
+const main = () => {
+    if (localStorage.getItem('token')) {
+        GroupRemove.removeGroup()
+        User.loadUserStars()
+    } else {
+        window.location.href = "/signin.html";
+    }
+}
+
+main()

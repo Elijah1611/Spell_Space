@@ -17,8 +17,6 @@ class Quizzes {
             const quizListSection = docQuery('.quiz-list-section')
 
             quizListSection.innerHTML = this.buildQuizList(quizzes)
-
-            User.loadUserStars()
         } catch (err) {
             console.log(err)
         }
@@ -40,4 +38,13 @@ class Quizzes {
     }
 }
 
-Quizzes.getQuizzes()
+const main = () => {
+    if (localStorage.getItem('token')) {
+        Quizzes.getQuizzes()
+        User.loadUserStars()
+    } else {
+        window.location.href = "/signin.html";
+    }
+}
+
+main()

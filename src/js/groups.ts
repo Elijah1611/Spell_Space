@@ -10,8 +10,6 @@ class WordGroups {
             const groupSection = document.querySelector('.word-group-section')
 
             groupSection.innerHTML = this.buildWordGroupElement(groups)
-
-            User.loadUserStars()
         } catch (err) {
             console.log(err)
         }
@@ -28,4 +26,13 @@ class WordGroups {
     }
 }
 
-WordGroups.getGroups()
+const main = () => {
+    if (localStorage.getItem('token')) {
+        WordGroups.getGroups()
+        User.loadUserStars()
+    } else {
+        window.location.href = "/signin.html";
+    }
+}
+
+main()
