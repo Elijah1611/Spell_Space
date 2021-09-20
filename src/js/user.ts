@@ -15,7 +15,7 @@ export class User {
 
     private static async fetchAndLoadUser() {
         try {
-            const response = await (await axios.get(`http://${process.env.HOST}/api/users/${localStorage.getItem('userId')}`, {
+            const response = await (await axios.get(`${process.env.HOST}/api/users/${localStorage.getItem('userId')}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
@@ -38,7 +38,7 @@ export class User {
 
     private static async fetchUserTotals() {
         try {
-            const response = await (await axios.get(`http://${process.env.HOST}/api/quiz/user/${localStorage.getItem('userId')}/totals`, {
+            const response = await (await axios.get(`${process.env.HOST}/api/quiz/user/${localStorage.getItem('userId')}/totals`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }

@@ -15,7 +15,7 @@ class GroupEdit {
             docQuery('.add-btn').addEventListener('click', async (e) => {
                 e.preventDefault()
                 const groupId: number= parseInt(window.location.search.replace('?id=', ''))
-                const result = await axios.put(`http://${process.env.HOST}/api/words/groups/${groupId}`, {
+                const result = await axios.put(`${process.env.HOST}/api/words/groups/${groupId}`, {
                     "name": this.newGroup,
                     "user_id": localStorage.getItem("userId")
                 }) 
