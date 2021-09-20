@@ -5,7 +5,7 @@ class WordGroups {
     public static async getGroups() {
         try {
             const userId = localStorage.getItem('userId')
-            const result = await axios.get('http://localhost:5000/api/words/groups/')
+            const result = await axios.get(`http://${process.env.HOST}/api/words/groups/`)
             const groups = result.data.filter(g => g.user_id == userId)
 
             console.log(groups)

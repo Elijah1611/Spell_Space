@@ -9,7 +9,7 @@ class Words {
     
     public static async getWords() {
         try {
-            const groupResult = await axios.get(`http://localhost:5000/api/words/groups/${this.wordGroupId}`)
+            const groupResult = await axios.get(`http://${process.env.HOST}/api/words/groups/${this.wordGroupId}`)
             const group = groupResult.data
             this.words = groupResult.data.words
 
@@ -25,14 +25,14 @@ class Words {
             title.innerHTML = `${group.name}`
             
             const userId = localStorage.getItem('userId')
-            const quizResult = await axios.get(`http://localhost:5000/api/quiz/user/${userId}`)
+            const quizResult = await axios.get(`http://${process.env.HOST}/api/quiz/user/${userId}`)
             this.quizzes = quizResult.data
             
             console.log(quizResult)
             
             wordSection.innerHTML = this.buildWordListElement(this.words, this.quizzes)
         } catch (err) {
-            const groupResult = await axios.get(`http://localhost:5000/api/words/groups/${this.wordGroupId}`)
+            const groupResult = await axios.get(`http://${process.env.HOST}/api/words/groups/${this.wordGroupId}`)
             this.words = groupResult.data.words
             const wordSection = document.querySelector('.word-list-section')
             wordSection.innerHTML = this.buildWordListElement(this.words, this.quizzes)

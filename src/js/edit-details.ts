@@ -13,7 +13,7 @@ class EditUserForm {
         console.log(formProps)
         try {
             const userId = localStorage.getItem('userId')
-            const response = await axios.put(`http://localhost:5000/api/users/${userId}`, formProps, {
+            const response = await axios.put(`http://${process.env.HOST}/api/users/${userId}`, formProps, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
@@ -40,7 +40,7 @@ class EditUserForm {
     public static handleAccountDelete() {
         docQuery('.remove-account-btn').addEventListener('click', async () => {
             const userId = localStorage.getItem('userId')
-            const results = await axios.delete(`http://localhost:5000/api/users/${userId}`)
+            const results = await axios.delete(`http://${process.env.HOST}/api/users/${userId}`)
             console.log(results.data)
             window.localStorage.removeItem('userId')
             window.localStorage.removeItem('token')

@@ -41,7 +41,7 @@ export class WordTest {
 
     private static async fetchWordDetails() {
         try {
-            const result = await axios.get(`http://localhost:5000/api/words/${this.wordId}`)
+            const result = await axios.get(`http://${process.env.HOST}/api/words/${this.wordId}`)
             const word = result.data
 
             const {text, definition, audio_url, group } = word
@@ -63,7 +63,7 @@ export class WordTest {
     private static async fetchQuizDetails() {
         try {
             const userId = localStorage.getItem('userId')
-            const result = await axios.get(`http://localhost:5000/api/quiz/user/${userId}`)
+            const result = await axios.get(`http://${process.env.HOST}/api/quiz/user/${userId}`)
             const quizList = result.data
 
             const wordQuizList = quizList.filter(q => q.word.text === this.word)
@@ -146,7 +146,7 @@ export class WordTest {
             if (spelledWord.toUpperCase() === this.word.toUpperCase()) {
                 const userId = localStorage.getItem('userId')
 
-                const results = await axios.post(`http://localhost:5000/api/quiz/`, {
+                const results = await axios.post(`http://${process.env.HOST}/api/quiz/`, {
                     star_level: 3 - this.quizFails,
                     elapsed_time: this.timerState * 1000,
                     user_id: userId,

@@ -7,7 +7,7 @@ class GroupRemove {
 
     public static async removeGroup() {
         try {
-            const groupResult = await axios.get(`http://localhost:5000/api/words/groups/${this.wordGroupId}`)
+            const groupResult = await axios.get(`http://${process.env.HOST}/api/words/groups/${this.wordGroupId}`)
             const group = groupResult.data
 
             const title = document.querySelector('.title-outline')
@@ -17,7 +17,7 @@ class GroupRemove {
                 e.preventDefault()
                 const gid = parseInt(window.location.search.replace('?id=', ''))
                 console.log(gid)
-                const test = await axios.delete(`http://localhost:5000/api/words/groups/${gid}`) 
+                const test = await axios.delete(`http://${process.env.HOST}/api/words/groups/${gid}`) 
                 console.log(test)
                 window.location.href = `/word-groups.html`
             })

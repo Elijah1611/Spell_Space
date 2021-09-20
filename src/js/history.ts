@@ -9,7 +9,7 @@ class Quizzes {
     public static async getQuizzes() {
         try {
             const userId = window.localStorage.getItem('userId')
-            const result = await axios.get(`http://localhost:5000/api/quiz/user/${userId}`)
+            const result = await axios.get(`http://${process.env.HOST}/api/quiz/user/${userId}`)
             const quizzes = result.data
 
             console.log(quizzes)

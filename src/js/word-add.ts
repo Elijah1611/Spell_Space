@@ -17,7 +17,7 @@ class WordAdd {
             docQuery('.add-btn').addEventListener('click', async (e) => {
                 try {
                     e.preventDefault()
-                    const result = await axios.post(`http://localhost:5000/api/words/`, {
+                    const result = await axios.post(`http://${process.env.HOST}/api/words/`, {
                         word: this.newWord,
                         group_id: this.wordGroupId
                     }) 

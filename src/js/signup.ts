@@ -16,7 +16,7 @@ class SignUpForm {
         }
         
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register/', newUser);
+            const response = await axios.post(`http://${process.env.HOST}/api/auth/register/`, newUser);
 
             console.log(response)
 

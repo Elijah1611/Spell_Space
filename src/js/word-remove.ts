@@ -7,7 +7,7 @@ class WordRemove {
 
     public static async getWords() {
         try {
-            const groupResult = await axios.get(`http://localhost:5000/api/words/groups/${this.wordGroupId}`)
+            const groupResult = await axios.get(`http://${process.env.HOST}/api/words/groups/${this.wordGroupId}`)
             const group = groupResult.data
             const words = groupResult.data.words
             let markedForRemovalId = null
@@ -44,7 +44,7 @@ class WordRemove {
 
                 if (markedForRemovalId){
                     console.log('deleting...', markedForRemovalId)
-                    const test = await axios.delete(`http://localhost:5000/api/words/${markedForRemovalId}`) 
+                    const test = await axios.delete(`http://${process.env.HOST}/api/words/${markedForRemovalId}`) 
                     console.log(test)
                     window.location.href = `/word-list.html?id=${this.wordGroupId}`
                 }
