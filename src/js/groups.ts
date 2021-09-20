@@ -4,12 +4,20 @@ import { User } from "./user";
 class WordGroups {
     public static async getGroups() {
         try {
+            const userId = localStorage.getItem('userId')
             const result = await axios.get('http://localhost:5000/api/words/groups/')
-            const groups = result.data
+            const groups = result.data.filter(g => g.user_id == userId)
+
+            console.log(groups)
 
             const groupSection = document.querySelector('.word-group-section')
 
-            groupSection.innerHTML = this.buildWordGroupElement(groups)
+            if (groups.length > 0) {
+                groupSection.innerHTML = this.buildWordGroupElement(groups)
+            }
+            else {
+                groupSection.innerHTML = "<span class=\"no-content-text\">No Word Groups Available</span>"
+            }
         } catch (err) {
             console.log(err)
         }

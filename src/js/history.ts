@@ -30,6 +30,7 @@ class Quizzes {
             <img src="${starRatingImageUrls[q.star_level]}" class="stars" width="50px" />
             <div class="quiz-card">
                 <h2><span>${q.word.text}</span></h2>
+                <p>${q.word.group.name}</p>
                 <p>${humanize(q.elapsed_time)}</p>
                 <p>${day(q.created_at).format('MMM D, YYYY h:mm A (Z)')}</p>
             </div>

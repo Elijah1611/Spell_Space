@@ -4,31 +4,39 @@ import { docQuery, starRatingImageUrls } from './helpers'
 
 class Words {
     public static wordGroupId: number = parseInt(window.location.search.replace('?id=', ''))
-
+    private static words = [];
+    private static quizzes = [];
+    
     public static async getWords() {
         try {
             const groupResult = await axios.get(`http://localhost:5000/api/words/groups/${this.wordGroupId}`)
             const group = groupResult.data
-            const words = groupResult.data.words
+            this.words = groupResult.data.words
 
-            const userId = localStorage.getItem('userId')
-            const quizResult = await axios.get(`http://localhost:5000/api/quiz/user/${userId}`)
-            const quizzes = quizResult.data
-
-            console.log(quizzes)
-
+            docQuery('#group-remove a').setAttribute('href', `group-remove.html?id=${group.id}`)
+            docQuery('#word-add a').setAttribute('href', `word-add.html?id=${group.id}`)
+            docQuery('#word-remove a').setAttribute('href', `word-remove.html?id=${group.id}`)
+            docQuery('#group-edit a').setAttribute('href', `group-edit.html?id=${group.id}`)
+            docQuery('#group-remove a').setAttribute('href', `group-remove.html?id=${group.id}`)
+            
             const title = document.querySelector('.title-outline')
             const wordSection = document.querySelector('.word-list-section')
-
-            title.innerHTML = `${group.name}`
-            wordSection.innerHTML = this.buildWordListElement(words, quizzes)
-
             
-            docQuery('#word-add a').setAttribute('href', `word-add.html?id=${this.wordGroupId}`)
-            docQuery('#word-remove a').setAttribute('href', `word-remove.html?id=${this.wordGroupId}`)
-            docQuery('#group-edit a').setAttribute('href', `group-edit.html?id=${this.wordGroupId}`)
-            docQuery('#group-remove a').setAttribute('href', `group-remove.html?id=${this.wordGroupId}`)
+            title.innerHTML = `${group.name}`
+            
+            const userId = localStorage.getItem('userId')
+            const quizResult = await axios.get(`http://localhost:5000/api/quiz/user/${userId}`)
+            this.quizzes = quizResult.data
+            
+            console.log(quizResult)
+            
+            wordSection.innerHTML = this.buildWordListElement(this.words, this.quizzes)
         } catch (err) {
+            const groupResult = await axios.get(`http://localhost:5000/api/words/groups/${this.wordGroupId}`)
+            this.words = groupResult.data.words
+            const wordSection = document.querySelector('.word-list-section')
+            wordSection.innerHTML = this.buildWordListElement(this.words, this.quizzes)
+
             console.log(err)
         }
     }

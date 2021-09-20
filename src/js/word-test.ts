@@ -3,12 +3,14 @@ import { User } from './user'
 import { docQuery, docQueryAll } from './helpers'
 import humanize from "humanize-duration";
 import { starRatingImageUrls } from './helpers'
+import dayjs from "dayjs";
 
 export class WordTest {
     public static wordId: number = parseInt(window.location.search.replace('?id=', ''))
     public static audioForError = 'https://soundbible.com/mp3/Computer%20Error-SoundBible.com-1655839472.mp3';
 
     private static word: string;
+    private static wordGroupId: number;
     private static definition: string;
     private static wordAudio: string;
     private static groupName: string;
@@ -50,6 +52,9 @@ export class WordTest {
             this.definition = definition
             this.wordAudio = audio_url
             this.groupName = group.name
+            this.wordGroupId = group.id
+            this.wordGroupElement.innerHTML = this.groupName
+            this.wordId = word.id
         } catch (e) {
             console.log(e)
         }
@@ -149,13 +154,13 @@ export class WordTest {
                 })
 
                 console.log(results.data)
-                window.location.href = `/pass.html?id=${this.wordId}&fails=${this.quizFails}`
+                window.location.href = `/pass.html?id=${this.wordId}&fails=${this.quizFails}&group=${this.wordGroupId}`
             } 
             else {
                 this.quizFails += 1
                 this.handleFails()
                 if (this.quizFails === 3) {
-                    window.location.href = `/fail.html?id=${this.wordId}`
+                    window.location.href = `/fail.html?id=${this.wordId}&group=${this.wordGroupId}`
                 }
             }
         })
@@ -211,17 +216,18 @@ export class WordTest {
         this.starLevelElement.innerHTML = this.makeStarRatingImageElement()
 
         await this.handleWordAudio()
+        this.testButtonElement.setAttribute('href', `./testing.html?id=${this.wordId}`)
+        
 
         if (!this.latestQuiz) return
 
         this.quizCountElement.innerHTML = this.quizList.length
-        this.lastTestedDateElement.innerHTML = new Date(this.latestQuiz.created_at).toDateString()
+        this.lastTestedDateElement.innerHTML = dayjs(this.latestQuiz.created_at).format('MMM D, YYYY h:ma (Z)')
         this.lastQuizTimeElement.innerHTML = humanize(this.latestQuiz.elapsed_time, { round: true });
         this.totalQuizTimeElement.innerHTML = humanize(this.totalQuizTime, { round: true });
 
-        this.testButtonElement.addEventListener('click', () => {
-            this.testButtonElement.setAttribute('href', `./testing.html?id=${this.wordId}`) 
-        })
+
+
     }
 
     
@@ -229,9 +235,9 @@ export class WordTest {
     public static async loadWordQuizPage() {
         await this.fetchWordDetails()
 
-        const wordBlur = this.word[0] + this.word.slice(1).split('').map(x=>'*').join('')
+        // const wordBlur = this.word[0] + this.word.slice(1).split('').map(x=>'*').join('')
 
-        this.wordTitleElement.innerHTML = `Testing ${wordBlur}`
+        this.wordTitleElement.innerHTML = `Testing`
 
         await this.handleWordAudio()
 

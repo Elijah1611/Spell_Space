@@ -1,5 +1,6 @@
 import { User } from './user'
 import axios from "axios";
+import { docQuery } from './helpers';
 
 class EditUserForm {
     public static formElement = document.getElementById('edit-user-form');
@@ -35,6 +36,17 @@ class EditUserForm {
             window.location.href = "/signin.html";
         }
     }
+
+    public static handleAccountDelete() {
+        docQuery('.remove-account-btn').addEventListener('click', async () => {
+            const userId = localStorage.getItem('userId')
+            const results = await axios.delete(`http://localhost:5000/api/users/${userId}`)
+            console.log(results.data)
+            window.localStorage.removeItem('userId')
+            window.localStorage.removeItem('token')
+            window.location.href = '/index.html'
+        })
+    }
 }
 
 
@@ -44,8 +56,8 @@ const main = () => {
     } else {
         window.location.href = "/signin.html";
     }
-
     EditUserForm.activateForm();
+    EditUserForm.handleAccountDelete()
 }
 
 main()

@@ -1,22 +1,26 @@
 import axios, { AxiosResponse } from "axios";
 
-class SignInForm {
-    public static formElement = document.getElementById('signin-form');
+class SignUpForm {
+    public static formElement = document.getElementById('signup-form');
 
     public static async submitForm(e) {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const formProps = Object.fromEntries(formData);
+
+        const newUser = {
+            location: "Earth",
+            profile_image: "https://i.pravatar.cc/150?img=13",
+            ...formProps,
+        }
         
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login/', formProps, {
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
-                }
-            });
+            const response = await axios.post('http://localhost:5000/api/auth/register/', newUser);
 
-            if (response.status == 200) {
+            console.log(response)
+
+            if (response.status == 201) {
                 const {token, user} = response.data
                 localStorage.setItem('token', token)
                 localStorage.setItem('userId', user.id)
@@ -40,4 +44,4 @@ class SignInForm {
     }
 }
 
-SignInForm.activateForm();
+SignUpForm.activateForm();

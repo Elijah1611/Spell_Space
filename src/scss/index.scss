@@ -179,13 +179,6 @@ body {
 }
 
 #signup-btn {
-  margin-left: 0rem;
-
-  @media (min-width: 720px) {
-    & {
-      margin-left: 0.5rem;
-    }
-  }
 }
 
 .have-account,

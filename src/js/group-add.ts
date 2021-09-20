@@ -14,8 +14,10 @@ class GroupAdd {
 
             docQuery('.add-btn').addEventListener('click', async (e) => {
                 e.preventDefault()
+                const userId = localStorage.getItem('userId')
                     const result = await axios.post(`http://localhost:5000/api/words/groups/`, {
-                        "name": this.newGroup
+                        "name": this.newGroup,
+                        "user_id": userId
                     }) 
 
                     console.log(result.data)
