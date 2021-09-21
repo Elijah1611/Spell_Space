@@ -148,7 +148,7 @@ export class WordTest {
 
                 const results = await axios.post(`${process.env.HOST}/api/quiz/`, {
                     star_level: 3 - this.quizFails,
-                    elapsed_time: this.timerState * 1000,
+                    elapsed_time: (15 - this.timerState) * 1000,
                     user_id: userId,
                     word_id: this.wordId
                 })
